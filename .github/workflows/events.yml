@@ -10,7 +10,7 @@ on:
     push:
       branches: 
         - main #main
-        - dev-* # dev-new or dev-this-is-new
+        - dev # dev-new or dev-this-is-new
         - feat/** # feat/new or feat/this/is/new
 jobs:
   test:
