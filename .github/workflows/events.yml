@@ -1,4 +1,4 @@
-name: Events demo 1
+name: Events workflow from dev branch
 on:
     pull_request:
         types: [opened, edited]
