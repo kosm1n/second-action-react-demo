@@ -76,3 +76,19 @@ jobs:
         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: |
+            dist
+            package.json
+  report:
+    needs: [test]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: 
+          echo "Something went wrong"
+          echo "${{ github }}"
